@@ -1,0 +1,20 @@
+@import '../../index';
+
+.article {
+  width: 941px;
+  box-sizing: border-box;
+  margin-top: 26px;
+  margin-bottom: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.cont-art {
+  width: 100%;
+  padding: 15px 14px;
+  box-sizing: border-box;
+  box-shadow: $shadow;
+  border-radius: $border-radius;
+  background-color: $base-background;
+}

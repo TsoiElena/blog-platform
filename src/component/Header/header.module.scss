@@ -1,0 +1,39 @@
+@import '../../index';
+
+.header {
+  width: 100%;
+  height: auto;
+  background-color: $base-background;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 22px;
+  box-sizing: border-box;
+  box-shadow: $shadow;
+
+  &-text {
+    text-decoration: none;
+    outline: none;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    color: $text-color;
+  }
+
+  &-linkContainer {
+    display: flex;
+    gap: 19px;
+    align-items: center;
+  }
+
+  &-link--buttonTheme {
+    border-radius: $border-radius;
+    border: $border;
+    padding: 8px 18px;
+    color: $button-green-color;
+  }
+}
+
+

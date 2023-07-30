@@ -1,0 +1,109 @@
+@import '../../../index';
+
+.article {
+  width: 100%;
+  box-sizing: border-box;
+
+  &-info {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .-article--info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px
+  }
+
+  &-title-like {
+    display: flex;
+    gap: 13px;
+    align-items: center;
+  }
+
+  &-title {
+    text-decoration: none;
+    font-family: Inter UI;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px; /* 140% */
+    color: $link-color;
+  }
+
+  &-tags {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  &-tag {
+    border-radius: 2px;
+    border: 1px solid rgba(0, 0, 0, 0.50);
+    padding: 3px 6px;
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  &-like {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+  }
+
+  &-author {
+    display: flex;
+    gap: 12px
+  }
+
+  &-desc {
+    font-family: Inter UI;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 00;
+    line-height: 22px;
+    color: $text-color;
+    margin-top: 5px;
+  }
+}
+
+.icon {
+  color: #52C41A;
+}
+
+.like-text {
+  font-family: Inter UI;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+  color: $text-color;
+  text-align: center;
+}
+
+.author {
+  font-family: Inter UI;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+  color: $text-color;
+
+  &-date {
+    color: rgba(0, 0, 0, 0.50);
+    font-family: Inter UI;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+  }
+
+  &-img {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+  }
+}

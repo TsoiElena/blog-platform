@@ -1,0 +1,12 @@
+@import '../../index';
+
+.article {
+  width: 941px;
+  margin-top: 24px;
+  padding: 19px;
+  background-color: $base-background;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  box-shadow: $shadow;
+}

@@ -25,6 +25,7 @@
   },
   "plugins": ["react", "prettier", "import", "@typescript-eslint", "react-redux"],
   "rules": {
+    "react/no-deprecated": "off",
     "import/named": "off",
     "react-redux/connect-prefer-named-arguments": 2,
     "indent": "off",
