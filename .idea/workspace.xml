@@ -20,29 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="da535d41-b8dd-4e44-a8b8-ef239797e044" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/component/ArticlePage/ArticlePage.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/component/ArticlePage/article.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/component/Articles/Article/Article.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/component/Articles/Article/article.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/component/Articles/ArticlesList.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/component/Articles/arcticlesList.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/component/Header/Header.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/component/Header/header.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/component/Notify/ErrorNotify/ErrorNotify.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/component/Notify/ErrorNotify/errorNotify.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/component/Preloader/Preloader.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hooks.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/redux-store.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/slice/article-slice.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/slice/articlsList-sliace.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/SingUp/SingUp.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/SingUp/singup.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Header/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +104,7 @@
       <workItem from="1690413866735" duration="4981000" />
       <workItem from="1690473000075" duration="1593000" />
       <workItem from="1690658443845" duration="313000" />
-      <workItem from="1690659107202" duration="11632000" />
+      <workItem from="1690659107202" duration="14334000" />
     </task>
     <task id="LOCAL-00001" summary="start">
       <created>1690403818192</created>
@@ -128,7 +113,14 @@
       <option name="project" value="LOCAL" />
       <updated>1690403818193</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="4.3.1">
+      <created>1690679454549</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1690679454549</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -148,29 +140,30 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="start" />
-    <option name="LAST_COMMIT_MESSAGE" value="start" />
+    <MESSAGE value="4.3.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="4.3.1" />
   </component>
   <component name="WindowStateProjectService">
     <state x="716" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1690660331066">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="716" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1690660331066" />
-    <state width="1899" height="282" key="GridCell.Tab.0.bottom" timestamp="1690679144523">
+    <state width="1899" height="282" key="GridCell.Tab.0.bottom" timestamp="1690680750098">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1690679144523" />
-    <state width="1899" height="282" key="GridCell.Tab.0.center" timestamp="1690679144522">
+    <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1690680750098" />
+    <state width="1899" height="282" key="GridCell.Tab.0.center" timestamp="1690680750098">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1690679144522" />
-    <state width="1899" height="282" key="GridCell.Tab.0.left" timestamp="1690679144522">
+    <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1690680750098" />
+    <state width="1899" height="282" key="GridCell.Tab.0.left" timestamp="1690680750098">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1690679144522" />
-    <state width="1899" height="282" key="GridCell.Tab.0.right" timestamp="1690679144522">
+    <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1690680750098" />
+    <state width="1899" height="282" key="GridCell.Tab.0.right" timestamp="1690680750098">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1690679144522" />
+    <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1690680750098" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1690403821704">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

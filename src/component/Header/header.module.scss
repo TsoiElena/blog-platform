@@ -34,6 +34,44 @@
     padding: 8px 18px;
     color: $button-green-color;
   }
+
+  &-profileContainer {
+    display: flex;
+    gap: 27px;
+    align-items: center;
+  }
+
+  &-profile {
+    display: flex;
+    gap: 13px;
+    align-items: center;
+
+    &-username {
+      color: $text-color;
+      font-family: Inter UI;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 28px;
+    }
+
+    &-avatar {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+    }
+  }
+
+  &-create {
+    padding: 6px 10px;
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  &-logout {
+    border: $text-color 1px solid;
+    color: $text-color;
+  }
 }
 
 

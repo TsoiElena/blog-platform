@@ -1,17 +1,29 @@
-import React from 'react';
-import { Route, Routes } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Route, Routes, Navigate } from 'react-router-dom';
+
+import { useAppDispatch, useAppSelector } from '../hooks';
+import { getUserFromlocal } from '../redux/slice/login-slice';
 
 import './App.css';
 import Header from './Header/Header';
 import ArticlesList from './Articles/ArticlesList';
 import ArticlePage from './ArticlePage/ArticlePage';
+import SingUp from './SingUp/SingUp';
+import SingIn from './SingUp/SingIn';
 
 function App() {
+  const { user } = useAppSelector((state) => state.loginSlice);
+  const dispatch = useAppDispatch();
+  useEffect(() => {
+    dispatch(getUserFromlocal());
+  }, []);
   return (
     <>
       <Header />
       <Routes>
         <Route path="/" element={<ArticlesList />}></Route>
+        <Route path="/sign-up" element={user ? <Navigate to="/" replace /> : <SingUp />}></Route>
+        <Route path="/sign-in" element={user ? <Navigate to="/" replace /> : <SingIn />}></Route>
         <Route path="/:id" element={<ArticlePage />}></Route>
       </Routes>
     </>
