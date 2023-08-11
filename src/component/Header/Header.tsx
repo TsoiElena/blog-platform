@@ -21,14 +21,14 @@ const Header = () => {
           <Link to="/sign-up" className={`${s['header-text']} ${s['header-link--buttonTheme']} ${s['header-create']}`}>
             Create article
           </Link>
-          <div className={s['header-profile']}>
+          <Link to="/profile" className={s['header-profile']}>
             <div className={s['header-profile-username']}>{user.username}</div>
             <img
               className={s['header-profile-avatar']}
               src={user.image ? user.image : 'https://static.productionready.io/images/smiley-cyrus.jpg'}
               alt=""
             />
-          </div>
+          </Link>
           <button
             className={`${s['header-text']} ${s['header-link--buttonTheme']} ${s['header-logout']}`}
             onClick={() => dispatch(logOut())}

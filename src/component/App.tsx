@@ -8,8 +8,9 @@ import './App.css';
 import Header from './Header/Header';
 import ArticlesList from './Articles/ArticlesList';
 import ArticlePage from './ArticlePage/ArticlePage';
-import SingUp from './SingUp/SingUp';
-import SingIn from './SingUp/SingIn';
+import SingUp from './forms/SingUp';
+import SingIn from './forms/SingIn';
+import EditProfile from './forms/EditProfile';
 
 function App() {
   const { user } = useAppSelector((state) => state.loginSlice);
@@ -24,6 +25,7 @@ function App() {
         <Route path="/" element={<ArticlesList />}></Route>
         <Route path="/sign-up" element={user ? <Navigate to="/" replace /> : <SingUp />}></Route>
         <Route path="/sign-in" element={user ? <Navigate to="/" replace /> : <SingIn />}></Route>
+        <Route path="/profile" element={user ? <EditProfile /> : <Navigate to="/" replace />}></Route>
         <Route path="/:id" element={<ArticlePage />}></Route>
       </Routes>
     </>

@@ -77,6 +77,7 @@ const SingUp = () => {
 
         <span className={s.label}>Password</span>
         <input
+          type="password"
           placeholder="Password"
           {...register('password', { required: true, maxLength: 40, minLength: 6 })}
           aria-invalid={errors.password ? 'true' : 'false'}
@@ -93,6 +94,7 @@ const SingUp = () => {
 
         <span className={s.label}>Repeat Password</span>
         <input
+          type="password"
           placeholder="Repeat Password"
           {...register('RepeatPassword', {
             required: true,

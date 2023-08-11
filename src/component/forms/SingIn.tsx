@@ -59,6 +59,7 @@ const SingIn = () => {
 
         <span className={s.label}>Password</span>
         <input
+          type="password"
           placeholder="Password"
           {...register('password', { required: true, maxLength: 40, minLength: 6 })}
           aria-invalid={errors.password || error ? 'true' : 'false'}

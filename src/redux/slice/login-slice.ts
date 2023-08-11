@@ -14,6 +14,21 @@ export type singUpDataType = {
   };
 };
 
+type dataEdit = {
+  body: editProfileData;
+  token: string;
+};
+
+export type editProfileData = {
+  user: {
+    email?: string;
+    password?: string;
+    username?: string;
+    bio?: string;
+    image?: string;
+  };
+};
+
 export type singInDataType = {
   user: {
     email: string;
@@ -53,6 +68,24 @@ export const singIn = createAsyncThunk<{ user: userType }, singInDataType, { rej
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(data),
+    });
+    if (!res.ok) {
+      return rejectWithValue('something went wrong');
+    }
+    return (await res.json()) as { user: userType };
+  }
+);
+
+export const editProfile = createAsyncThunk<{ user: userType }, dataEdit, { rejectValue: string }>(
+  'loginSlice/editProfile',
+  async function (data, { rejectWithValue }) {
+    const res = await fetch('https://blog.kata.academy/api/user', {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Token ${data.token}`,
+      },
+      body: JSON.stringify(data.body),
     });
     if (!res.ok) {
       return rejectWithValue('something went wrong');
@@ -105,6 +138,19 @@ const loginSlice = createSlice({
         state.isLoading = false;
       })
       .addCase(singIn.rejected, (state, action) => {
+        state.error = true;
+        state.isLoading = false;
+      })
+      .addCase(editProfile.pending, (state) => {
+        state.isLoading = true;
+        state.error = false;
+      })
+      .addCase(editProfile.fulfilled, (state, action) => {
+        localStorage.setItem('user', JSON.stringify(action.payload.user));
+        state.user = action.payload.user;
+        state.isLoading = false;
+      })
+      .addCase(editProfile.rejected, (state, action) => {
         state.error = true;
         state.isLoading = false;
       });
