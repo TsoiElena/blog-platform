@@ -13,10 +13,17 @@ import s from './arcticlesList.module.scss';
 
 const ArticlesList = () => {
   const { page, totalPage, error, articles, isLoading } = useAppSelector((state) => state.acticlesListPage);
+  const { user } = useAppSelector((state) => state.loginSlice);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    dispatch(getArticles(page));
+    if (user && user.token) {
+      dispatch(getArticles({ page: page, token: user.token }));
+      console.log(1);
+    } else {
+      dispatch(getArticles({ page: page }));
+      console.log(2);
+    }
   }, [page]);
 
   if (isLoading) return <Preloader />;

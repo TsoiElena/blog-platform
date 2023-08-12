@@ -2,7 +2,8 @@ import React from 'react';
 import format from 'date-fns/format';
 import { Link } from 'react-router-dom';
 
-import { articleType } from '../../../redux/slice/articlsList-sliace';
+import { useAppDispatch, useAppSelector } from '../../../hooks';
+import { articleType, likeArticke, unlikeArticke } from '../../../redux/slice/articlsList-sliace';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import unLike from '../../../assets/heart 1.svg';
@@ -20,7 +21,18 @@ type ArticleProps = {
 };
 
 const Article: React.FC<ArticleProps> = ({ article, page = false }) => {
+  const { user } = useAppSelector((state) => state.loginSlice);
+  const dispatch = useAppDispatch();
   const date = new Date(article.createdAt);
+
+  const handleLike = () => {
+    if (user && !user.token) return alert('Need Auth');
+    if (article.favorited && user && user.token) dispatch(unlikeArticke({ slug: article.slug, token: user.token }));
+    if (!article.favorited && user && user.token) dispatch(likeArticke({ slug: article.slug, token: user.token }));
+  };
+
+  console.log(article);
+
   return (
     <div className={s.article}>
       <div className={s['article-info']}>
@@ -34,7 +46,7 @@ const Article: React.FC<ArticleProps> = ({ article, page = false }) => {
               </Link>
             )}
             <div className={s['article-like']}>
-              <img src={article.favorited ? like : unLike} alt="" />
+              <img src={article.favorited ? like : unLike} alt="" onClick={handleLike} />
               <span className={s['like-text']}>{article.favoritesCount}</span>
             </div>
           </div>

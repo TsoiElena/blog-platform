@@ -20,14 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="da535d41-b8dd-4e44-a8b8-ef239797e044" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/component/forms/EditProfile.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Header/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/SingUp/SingIn.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/forms/SingIn.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/SingUp/SingUp.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/forms/SingUp.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/SingUp/singup.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/forms/singup.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/slice/login-slice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slice/login-slice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/ArticlePage/ArticlePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/ArticlePage/ArticlePage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/Articles/Article/Article.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Articles/Article/Article.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/Articles/ArticlesList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Articles/ArticlesList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/redux-store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/redux-store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/slice/article-slice.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/slice/articlsList-sliace.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slice/articlsList-sliace.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +104,7 @@
       <workItem from="1690473000075" duration="1593000" />
       <workItem from="1690658443845" duration="313000" />
       <workItem from="1690659107202" duration="45269000" />
-      <workItem from="1691711012849" duration="1621000" />
+      <workItem from="1691711012849" duration="8034000" />
     </task>
     <task id="LOCAL-00001" summary="start">
       <created>1690403818192</created>
@@ -128,7 +127,14 @@
       <option name="project" value="LOCAL" />
       <updated>1691346729706</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="4.3.2">
+      <created>1691712773681</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1691712773681</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -150,32 +156,37 @@
     <MESSAGE value="start" />
     <MESSAGE value="4.3.1" />
     <MESSAGE value="4.3.1 - login" />
-    <option name="LAST_COMMIT_MESSAGE" value="4.3.1 - login" />
+    <MESSAGE value="4.3.2" />
+    <option name="LAST_COMMIT_MESSAGE" value="4.3.2" />
   </component>
   <component name="WindowStateProjectService">
     <state x="716" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1690660331066">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="716" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1690660331066" />
-    <state width="1899" height="282" key="GridCell.Tab.0.bottom" timestamp="1691711679629">
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1691800589928">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1691711679629" />
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1691800589928" />
+    <state width="1899" height="282" key="GridCell.Tab.0.bottom" timestamp="1691802027482">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1691802027482" />
     <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1691483872251" />
-    <state width="1899" height="282" key="GridCell.Tab.0.center" timestamp="1691711679629">
+    <state width="1899" height="282" key="GridCell.Tab.0.center" timestamp="1691802027481">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1691711679629" />
+    <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1691802027481" />
     <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1691483872250" />
-    <state width="1899" height="282" key="GridCell.Tab.0.left" timestamp="1691711679629">
+    <state width="1899" height="282" key="GridCell.Tab.0.left" timestamp="1691802027481">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1691711679629" />
+    <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1691802027481" />
     <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1691483872250" />
-    <state width="1899" height="282" key="GridCell.Tab.0.right" timestamp="1691711679629">
+    <state width="1899" height="282" key="GridCell.Tab.0.right" timestamp="1691802027482">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1691711679629" />
+    <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1691802027482" />
     <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1691483872251" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1690403821704">
       <screen x="0" y="0" width="1920" height="1040" />

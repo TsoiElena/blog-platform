@@ -4,7 +4,7 @@ import { Space } from 'antd';
 import ReactMarkdown from 'react-markdown';
 
 import { useAppDispatch, useAppSelector } from '../../hooks';
-import { getArticle } from '../../redux/slice/article-slice';
+import { getArticle } from '../../redux/slice/articlsList-sliace';
 import Article from '../Articles/Article/Article';
 import ErrorNotify from '../Notify/ErrorNotify/ErrorNotify';
 import Preloader from '../Preloader/Preloader';
@@ -15,7 +15,7 @@ import s from './article.module.scss';
 
 const ArticlePage = () => {
   const { id } = useParams();
-  const { isLoading, article, error } = useAppSelector((state) => state.acticlePage);
+  const { isLoading, article, error } = useAppSelector((state) => state.acticlesListPage);
   const dispatch = useAppDispatch();
   useEffect(() => {
     dispatch(getArticle(id));
