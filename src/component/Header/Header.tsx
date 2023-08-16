@@ -18,7 +18,10 @@ const Header = () => {
       </Link>
       {user ? (
         <div className={s['header-profileContainer']}>
-          <Link to="/sign-up" className={`${s['header-text']} ${s['header-link--buttonTheme']} ${s['header-create']}`}>
+          <Link
+            to="/new-article"
+            className={`${s['header-text']} ${s['header-link--buttonTheme']} ${s['header-create']}`}
+          >
             Create article
           </Link>
           <Link to="/profile" className={s['header-profile']}>

@@ -1,9 +1,10 @@
 import React from 'react';
 import format from 'date-fns/format';
+import { message, Popconfirm } from 'antd';
 import { Link } from 'react-router-dom';
 
 import { useAppDispatch, useAppSelector } from '../../../hooks';
-import { articleType, likeArticke, unlikeArticke } from '../../../redux/slice/articlsList-sliace';
+import { articleType, deleteArticle, likeArticle, unlikeArticle } from '../../../redux/slice/articlsList-sliace';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import unLike from '../../../assets/heart 1.svg';
@@ -27,11 +28,19 @@ const Article: React.FC<ArticleProps> = ({ article, page = false }) => {
 
   const handleLike = () => {
     if (user && !user.token) return alert('Need Auth');
-    if (article.favorited && user && user.token) dispatch(unlikeArticke({ slug: article.slug, token: user.token }));
-    if (!article.favorited && user && user.token) dispatch(likeArticke({ slug: article.slug, token: user.token }));
+    if (article.favorited && user && user.token) dispatch(unlikeArticle({ slug: article.slug, token: user.token }));
+    if (!article.favorited && user && user.token) dispatch(likeArticle({ slug: article.slug, token: user.token }));
   };
 
-  console.log(article);
+  const confirm = () => {
+    if (!user) return;
+    dispatch(deleteArticle({ token: user.token, slug: article.slug }));
+    message.success('Click on Yes');
+  };
+
+  const cancel = () => {
+    message.error('Click on No');
+  };
 
   return (
     <div className={s.article}>
@@ -69,7 +78,26 @@ const Article: React.FC<ArticleProps> = ({ article, page = false }) => {
           </div>
         </div>
       </div>
-      <div className={s['article-desc']}>{article.description}</div>
+      <div className={s.block}>
+        <div className={s['article-desc']}>{article.description}</div>
+        {user?.username === article.author.username && page && (
+          <div className={s['block-button']}>
+            <Popconfirm
+              title="Are you sure to delete this article?"
+              onConfirm={confirm}
+              onCancel={cancel}
+              okText="Yes"
+              cancelText="No"
+              placement={'right'}
+            >
+              <button className={s['block-button-delete']}>Delete</button>
+            </Popconfirm>
+            <Link to={`/articles/${article.slug}/edit`} state={article} className={s['block-button-edit']}>
+              Edit
+            </Link>
+          </div>
+        )}
+      </div>
     </div>
   );
 };

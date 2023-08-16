@@ -8,10 +8,11 @@ interface articlesSliceState {
   error: boolean | undefined;
   isLoading: boolean;
   totalPage: number;
+  success: boolean;
 }
 
 export type articleType = {
-  id: string;
+  id?: string;
   slug: string;
   title: string;
   description: string;
@@ -48,6 +49,31 @@ type LikeData = {
   token: string;
 };
 
+export type createArticleData = {
+  body: {
+    article: {
+      title: string;
+      description: string;
+      body: string;
+      tagList: any[];
+    };
+  };
+  token: string;
+};
+
+export type editArticleData = {
+  body: {
+    article: {
+      title: string;
+      description: string;
+      body: string;
+      tagList: any[];
+    };
+  };
+  token: string;
+  slug: string;
+};
+
 export const getArticles = createAsyncThunk<articlesResType, getArticlesData, { rejectValue: string }>(
   'acticlesListPage/getArticles',
   async function (data, { rejectWithValue }) {
@@ -78,8 +104,8 @@ export const getArticle = createAsyncThunk<articleResType, string | undefined, {
   }
 );
 
-export const likeArticke = createAsyncThunk<articleResType, LikeData, { rejectValue: string }>(
-  'acticlesListPage/likeArticke',
+export const likeArticle = createAsyncThunk<articleResType, LikeData, { rejectValue: string }>(
+  'acticlesListPage/likeArticle',
   async function (data, { rejectWithValue }) {
     const res = await fetch(`https://blog.kata.academy/api/articles/${data.slug}/favorite`, {
       method: 'POST',
@@ -92,8 +118,8 @@ export const likeArticke = createAsyncThunk<articleResType, LikeData, { rejectVa
   }
 );
 
-export const unlikeArticke = createAsyncThunk<articleResType, LikeData, { rejectValue: string }>(
-  'acticlesListPage/unlikeArticke',
+export const unlikeArticle = createAsyncThunk<articleResType, LikeData, { rejectValue: string }>(
+  'acticlesListPage/unlikeArticle',
   async function (data, { rejectWithValue }) {
     const res = await fetch(`https://blog.kata.academy/api/articles/${data.slug}/favorite`, {
       method: 'DELETE',
@@ -106,6 +132,52 @@ export const unlikeArticke = createAsyncThunk<articleResType, LikeData, { reject
   }
 );
 
+export const createArticle = createAsyncThunk<articleResType, createArticleData, { rejectValue: string }>(
+  'acticlesListPage/createArticle',
+  async function (data, { rejectWithValue }) {
+    const res = await fetch('https://blog.kata.academy/api/articles', {
+      method: 'POST',
+      headers: {
+        Authorization: `Token ${data.token}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data.body),
+    });
+    if (!res.ok) return rejectWithValue('something went wrong');
+    return (await res.json()) as articleResType;
+  }
+);
+
+export const editArticle = createAsyncThunk<articleResType, editArticleData, { rejectValue: string }>(
+  'acticlesListPage/editArticle',
+  async function (data, { rejectWithValue }) {
+    const res = await fetch(`https://blog.kata.academy/api/articles/${data.slug}`, {
+      method: 'PUT',
+      headers: {
+        Authorization: `Token ${data.token}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data.body),
+    });
+    if (!res.ok) return rejectWithValue('something went wrong');
+    return (await res.json()) as articleResType;
+  }
+);
+
+export const deleteArticle = createAsyncThunk<number, { slug: string; token: string }, { rejectValue: string }>(
+  'acticlesListPage/deleteArticle',
+  async function (data, { rejectWithValue }) {
+    const res = await fetch(`https://blog.kata.academy/api/articles/${data.slug}`, {
+      method: 'DELETE',
+      headers: {
+        Authorization: `Token ${data.token}`,
+      },
+    });
+    if (!res.ok) return rejectWithValue('something went wrong');
+    return 1;
+  }
+);
+
 const initialState: articlesSliceState = {
   articles: [],
   article: null,
@@ -113,6 +185,7 @@ const initialState: articlesSliceState = {
   error: false,
   isLoading: false,
   totalPage: 1,
+  success: false,
 };
 
 const menuSlice = createSlice({
@@ -150,11 +223,11 @@ const menuSlice = createSlice({
         state.error = true;
         state.isLoading = false;
       })
-      .addCase(likeArticke.pending, (state) => {
+      .addCase(likeArticle.pending, (state) => {
         state.isLoading = true;
         state.error = false;
       })
-      .addCase(likeArticke.fulfilled, (state, action) => {
+      .addCase(likeArticle.fulfilled, (state, action) => {
         state.article = action.payload.article;
         state.articles = state.articles.map((article) => {
           if (article.slug === action.payload.article.slug) return action.payload.article;
@@ -162,15 +235,15 @@ const menuSlice = createSlice({
         });
         state.isLoading = false;
       })
-      .addCase(likeArticke.rejected, (state, action) => {
+      .addCase(likeArticle.rejected, (state, action) => {
         state.error = true;
         state.isLoading = false;
       })
-      .addCase(unlikeArticke.pending, (state) => {
+      .addCase(unlikeArticle.pending, (state) => {
         state.isLoading = true;
         state.error = false;
       })
-      .addCase(unlikeArticke.fulfilled, (state, action) => {
+      .addCase(unlikeArticle.fulfilled, (state, action) => {
         state.article = action.payload.article;
         state.articles = state.articles.map((article) => {
           if (article.slug === action.payload.article.slug) return action.payload.article;
@@ -178,7 +251,41 @@ const menuSlice = createSlice({
         });
         state.isLoading = false;
       })
-      .addCase(unlikeArticke.rejected, (state, action) => {
+      .addCase(unlikeArticle.rejected, (state, action) => {
+        state.error = true;
+        state.isLoading = false;
+      })
+      .addCase(createArticle.pending, (state) => {
+        state.isLoading = true;
+        state.error = false;
+      })
+      .addCase(createArticle.fulfilled, (state, action) => {
+        state.isLoading = false;
+      })
+      .addCase(createArticle.rejected, (state, action) => {
+        state.error = true;
+        state.isLoading = false;
+      })
+      .addCase(editArticle.pending, (state) => {
+        state.isLoading = true;
+        state.error = false;
+      })
+      .addCase(editArticle.fulfilled, (state, action) => {
+        state.isLoading = false;
+      })
+      .addCase(editArticle.rejected, (state, action) => {
+        state.error = true;
+        state.isLoading = false;
+      })
+      .addCase(deleteArticle.pending, (state) => {
+        state.isLoading = true;
+        state.error = false;
+      })
+      .addCase(deleteArticle.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.success = true;
+      })
+      .addCase(deleteArticle.rejected, (state, action) => {
         state.error = true;
         state.isLoading = false;
       });

@@ -15,7 +15,7 @@ import s from './article.module.scss';
 
 const ArticlePage = () => {
   const { id } = useParams();
-  const { isLoading, article, error } = useAppSelector((state) => state.acticlesListPage);
+  const { isLoading, article, error, success } = useAppSelector((state) => state.acticlesListPage);
   const dispatch = useAppDispatch();
   useEffect(() => {
     dispatch(getArticle(id));
@@ -23,8 +23,7 @@ const ArticlePage = () => {
 
   if (isLoading) return <Preloader />;
   if (error) return <ErrorNotify />;
-
-  console.log(article);
+  if (success) return <div>Deleted</div>;
 
   return (
     <Space direction="vertical" style={{ width: '100%', marginBottom: '26px' }} align={'center'}>

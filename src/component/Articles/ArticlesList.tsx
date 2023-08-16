@@ -19,10 +19,8 @@ const ArticlesList = () => {
   useEffect(() => {
     if (user && user.token) {
       dispatch(getArticles({ page: page, token: user.token }));
-      console.log(1);
     } else {
       dispatch(getArticles({ page: page }));
-      console.log(2);
     }
   }, [page]);
 
@@ -34,7 +32,7 @@ const ArticlesList = () => {
       <div className={s.article}>
         {articles.length &&
           articles.map((article) => (
-            <div key={article.id} className={s['cont-art']}>
+            <div key={article.slug} className={s['cont-art']}>
               <Article article={article} />
             </div>
           ))}

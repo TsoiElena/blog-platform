@@ -107,3 +107,40 @@
     border-radius: 50%;
   }
 }
+
+.block {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 22px;
+
+  &-button {
+    display: flex;
+    gap: 12px;
+    align-self: center;
+  }
+
+  &-button-delete,
+  &-button-edit {
+    text-decoration: none;
+    font-family: Inter UI;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+  }
+
+  &-button-delete {
+    background-color: transparent;
+    color: #F5222D;
+    border: 1px solid #F5222D;
+    border-radius: $border-radius;
+    padding: 6px 17px;
+  }
+
+  &-button-edit {
+    color: #52C41A;
+    border: 1px solid #52C41A;
+    border-radius: $border-radius;
+    padding: 6px 19px;
+  }
+}

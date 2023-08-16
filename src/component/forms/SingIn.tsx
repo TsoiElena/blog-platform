@@ -22,8 +22,6 @@ const SingIn = () => {
   const state = useAppSelector((state) => state.loginSlice);
   const dispatch = useAppDispatch();
 
-  console.log(state);
-
   const {
     register,
     handleSubmit,
@@ -37,7 +35,6 @@ const SingIn = () => {
       },
     };
     dispatch(singIn(userData));
-    console.log(data);
   };
 
   if (isLoading) return <Preloader />;
