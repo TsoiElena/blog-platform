@@ -4,13 +4,11 @@ import { Space } from 'antd';
 import ReactMarkdown from 'react-markdown';
 
 import { useAppDispatch, useAppSelector } from '../../hooks';
-import { getArticle } from '../../redux/slice/articlsList-sliace';
+import { getArticle } from '../../redux/slice/articlsList-slice';
 import Article from '../Articles/Article/Article';
 import ErrorNotify from '../Notify/ErrorNotify/ErrorNotify';
 import Preloader from '../Preloader/Preloader';
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
 import s from './article.module.scss';
 
 const ArticlePage = () => {

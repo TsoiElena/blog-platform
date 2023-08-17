@@ -4,8 +4,6 @@ import { Link } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../hooks';
 import { logOut } from '../../redux/slice/login-slice';
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
 import s from './header.module.scss';
 
 const Header = () => {

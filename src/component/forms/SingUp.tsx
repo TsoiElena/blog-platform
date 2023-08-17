@@ -7,8 +7,6 @@ import ErrorNotify from '../Notify/ErrorNotify/ErrorNotify';
 import { useAppDispatch, useAppSelector } from '../../hooks';
 import { singUp } from '../../redux/slice/login-slice';
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
 import s from './singup.module.scss';
 
 type Inputs = {

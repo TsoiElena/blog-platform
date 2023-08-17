@@ -1,14 +1,12 @@
 import React, { useEffect } from 'react';
 import { Pagination, Space } from 'antd';
 
-import { changePage, getArticles } from '../../redux/slice/articlsList-sliace';
+import { changePage, getArticles } from '../../redux/slice/articlsList-slice';
 import { useAppDispatch, useAppSelector } from '../../hooks';
 import ErrorNotify from '../Notify/ErrorNotify/ErrorNotify';
 import Preloader from '../Preloader/Preloader';
 
 import Article from './Article/Article';
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
 import s from './arcticlesList.module.scss';
 
 const ArticlesList = () => {

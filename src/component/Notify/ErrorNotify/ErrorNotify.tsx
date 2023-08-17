@@ -1,8 +1,6 @@
 import React from 'react';
 import { Alert, Space } from 'antd';
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
 import s from './errorNotify.module.scss';
 
 const ErrorNotify: React.FC = () => (

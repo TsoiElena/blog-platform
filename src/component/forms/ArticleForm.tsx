@@ -1,15 +1,13 @@
-import React, { useState } from 'react';
-import { useForm, SubmitHandler, useFieldArray, Control } from 'react-hook-form';
+import React from 'react';
+import { useForm, SubmitHandler, useFieldArray } from 'react-hook-form';
 import { useNavigate, useParams, useLocation } from 'react-router-dom';
 import { Space } from 'antd';
 
 import Preloader from '../Preloader/Preloader';
 import ErrorNotify from '../Notify/ErrorNotify/ErrorNotify';
 import { useAppDispatch, useAppSelector } from '../../hooks';
-import { createArticle, createArticleData, editArticle, editArticleData } from '../../redux/slice/articlsList-sliace';
+import { createArticle, createArticleData, editArticle, editArticleData } from '../../redux/slice/articlsList-slice';
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
 import s from './singup.module.scss';
 
 type Inputs = {

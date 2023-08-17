@@ -8,8 +8,6 @@ import { useAppDispatch, useAppSelector } from '../../hooks';
 import { singIn } from '../../redux/slice/login-slice';
 
 import { EMAIL_REGEXP } from './SingUp';
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
 import s from './singup.module.scss';
 
 type Inputs = {

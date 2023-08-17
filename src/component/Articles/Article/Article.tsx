@@ -4,16 +4,10 @@ import { message, Popconfirm } from 'antd';
 import { Link } from 'react-router-dom';
 
 import { useAppDispatch, useAppSelector } from '../../../hooks';
-import { articleType, deleteArticle, likeArticle, unlikeArticle } from '../../../redux/slice/articlsList-sliace';
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
+import { articleType, deleteArticle, likeArticle, unlikeArticle } from '../../../redux/slice/articlsList-slice';
 import unLike from '../../../assets/heart 1.svg';
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
 import like from '../../../assets/path4.svg';
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
 import s from './article.module.scss';
 
 type ArticleProps = {
