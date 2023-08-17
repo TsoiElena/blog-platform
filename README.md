@@ -1,3 +1,3 @@
-deploy: https://vercel.com/tsoielena/blog-platform/EL5JTWPATQDfcmE9N7NMVEex3tRp
+deploy: https://vercel.com/tsoielena/blog-platform/EvcUipCnxrEC5SLJGfBuQfF7e8FN
 
-site: https://blog-platform-e9sxip6jz-tsoielena.vercel.app/
+site: https://blog-platform-lulkxja1i-tsoielena.vercel.app/
